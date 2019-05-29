@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="500" height="500" style="border:1px solid #d3d3d3;">
+Your browser does not support the HTML5 canvas tag.</canvas>
+
+<script>
+var c = document.getElementById("myCanvas");
+var ctx = c.getContext("2d");
+
+c_x = 250;
+c_y = 250;
+fine_step = 10;
+distance = 1000;
+
+ctx.moveTo(c_x,c_y);
+for(let i=0; i<=distance; i++){
+	ctx.lineTo(c_x, c_y);
+    var x = Math.floor(Math.random() * fine_step);
+	var y = Math.floor(Math.random() * fine_step);
+    
+    var d_x = Math.floor(Math.random() * 10); 
+    if(d_x > 4){
+    	c_x = c_x + x;
+    }else{
+    	c_x = c_x - x;
+    }
+    
+	var d_y = Math.floor(Math.random() * 10); 
+    if(d_y > 4){
+    	c_y = c_y + y;
+    }else{
+    	c_y = c_y - y;
+    }
+}
+ctx.stroke();
+</script>
+
+</body>
+</html>
